@@ -15,7 +15,10 @@ import sys
 
 def timeConversion(s: str):
     # Write your code here
-    print(s[:2])
+    hh = int(s[:2])
+    if s[-2:] == 'PM':
+        return f'{(hh % 12) + 12:02d}{s[2:-2]}'
+    return f'{hh % 12:02d}{s[2:-2]}'
 
 
-timeConversion('12:00:00AM')
+print(timeConversion('12:00:00PM'))
