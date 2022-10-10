@@ -42,10 +42,16 @@ int maximumScore(int a, int b, int c) {
     return moves;
 }
 
+int maximumScore2(int a, int b, int c) {
+    int s = a + b + c;
+    int nimsum = a ^ b ^ c;
+    return (s - nimsum)/2;
+}
+
 int main() {
-  cout<<maximumScore(2, 4, 6)<<endl;
-  cout<<maximumScore(2, 2, 2)<<endl;
-  cout<<maximumScore(1, 2, 6)<<endl;
-  cout<<maximumScore(2,3,3)<<endl;
+  cout<<maximumScore(2, 4, 6)<<" "<<maximumScore2(2, 4, 6)<<endl;
+  cout<<maximumScore(2, 2, 2)<<" "<<maximumScore2(2, 2, 2)<<endl;
+  cout<<maximumScore(1, 2, 6)<<" "<<maximumScore2(1, 2, 6)<<endl;
+  cout<<maximumScore(2, 3, 3)<<" "<<maximumScore2(2, 3, 3)<<endl;
   return 0;
 }
