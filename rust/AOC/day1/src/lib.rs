@@ -2,7 +2,7 @@
 pub fn process(input: &str) -> u32 {
     input
     .split("\r\n\r\n")
-    .map(|e| e.lines().filter_map(|v| v.parse::<u32>().ok()).sum::<u32>())
+    .map(|e| e.lines().filter_map(|v| v.parse::<u32>().ok()).sum())
     .max()
     .unwrap_or(0)
 }
@@ -10,7 +10,7 @@ pub fn process(input: &str) -> u32 {
 pub fn process_part2(input: &str) -> u32 {
     let mut calories: Vec<u32> = input
     .split("\r\n\r\n")
-    .map(|e| e.lines().filter_map(|v| v.parse::<u32>().ok()).sum::<u32>())
+    .map(|e| e.lines().filter_map(|v| v.parse::<u32>().ok()).sum())
     .collect();
 
     calories.sort();
